@@ -117,7 +117,15 @@ function renderCityBtns() {
     })
 }
 
+function initialise() {
+    var userSearch = JSON.parse(localStorage.getItem("storedCities"));
+    if (userSearch !== null) {
+        storedCities = userSearch;
+    }
 
+    renderLastSearch();
+    renderCityBtns();
+}
 
 function storeSearches() {
     localStorage.setItem("storedCities", JSON.stringify(storedCities));
